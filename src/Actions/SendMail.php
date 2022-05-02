@@ -47,11 +47,12 @@ class SendMail extends Action
     }
 
     /**
-     * Get the fields available on the action.
+     * Get the fields displayed by the resource.
      *
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array
      */
-    public function fields()
+    public function fields(NovaRequest $request)
     {
         return [
             SendMailField::make('Mail'),
