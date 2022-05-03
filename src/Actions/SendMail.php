@@ -14,6 +14,8 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\ActionFields;
 use Illuminate\Queue\SerializesModels;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Textarea;
 
 class SendMail extends Action
 {
@@ -55,8 +57,9 @@ class SendMail extends Action
     public function fields(NovaRequest $request)
     {
         return [
-            Text::make('Subject'),
-            SendMailField::make('Mail'),
+            Text::make('Subject')->rules('required'),
+            Number::make('Send Delay')->min(0)->max(120)->step(1)->rules('required')->placeholder('Send Delay (in minutes)'),
+            Textarea::make('Body')->rules('required')
         ];
     }
 }
