@@ -1,30 +1,28 @@
 <?php
 
-namespace KirschbaumDevelopment\NovaMail\Actions;
+namespace App\Nova\Actions;
 
 use Illuminate\Bus\Queueable;
-use Laravel\Nova\Actions\Action;
-use Illuminate\Support\Collection;
-use Laravel\Nova\Fields\ActionFields;
-use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Collection;
 use KirschbaumDevelopment\NovaMail\Mail\Send;
 use KirschbaumDevelopment\NovaMail\Models\NovaMailTemplate;
 use KirschbaumDevelopment\NovaMail\SendMail as SendMailField;
+use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\ActionFields;
+use Illuminate\Queue\SerializesModels;
 
-class SendMail extends Action
+class EmailAccountProfile extends Action
 {
-    use Queueable;
-    use SerializesModels;
-    use InteractsWithQueue;
+    use InteractsWithQueue, Queueable, SerializesModels;
 
     /**
      * Perform the action on the given models.
      *
      * @param  \Laravel\Nova\Fields\ActionFields  $fields
      * @param  \Illuminate\Support\Collection  $models
-     *
      * @return mixed
      */
     public function handle(ActionFields $fields, Collection $models)
@@ -48,7 +46,7 @@ class SendMail extends Action
     }
 
     /**
-     * Get the fields displayed by the resource.
+     * Get the fields available on the action.
      *
      * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return array

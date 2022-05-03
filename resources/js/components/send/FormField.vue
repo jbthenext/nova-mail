@@ -70,13 +70,13 @@ import InteractsWithTemplates from '../../mixins/InteractsWithTemplates';
 export default {
   mixins: [FormField, HandlesValidationErrors, InteractsWithTemplates],
 
-  data() {
-    return {
-      selectedTemplate: '',
-      body: '',
-      subject: '',
-      delayInMinutes: null
-    }
+  setup() {
+    const selectedTemplate = ref(null);
+    const body = ref(null);
+    const subject = ref(null);
+    const delayInMinutes = ref(null);
+
+    return { selectedTemplate, body, subject, delayInMinutes };
   },
 
   methods: {
