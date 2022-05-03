@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\TextArea;
 use Laravel\Nova\Fields\Number;
 use KirschbaumDevelopment\NovaMail\Events;
 use KirschbaumDevelopment\NovaMail\Models\NovaMailTemplate as NovaMailTemplateModel;
@@ -50,8 +51,7 @@ class NovaMailTemplate extends Resource
 
             Text::make('Subject'),
 
-            Code::make('Content')
-                ->language('markdown')
+            TextArea::make('Content')
                 ->hideFromIndex(),
 
             Number::make('Send delay (minutes)', 'send_delay_in_minutes'),
