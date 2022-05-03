@@ -18015,11 +18015,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-Nova.booting(function (Vue, router, store) {
-  Vue.component('form-send-mail', _components_send_FormField__WEBPACK_IMPORTED_MODULE_0__["default"]);
-  Vue.component('index-events', _components_events_IndexField__WEBPACK_IMPORTED_MODULE_1__["default"]);
-  Vue.component('detail-events', _components_events_DetailField__WEBPACK_IMPORTED_MODULE_2__["default"]);
-  Vue.component('form-events', _components_events_FormField__WEBPACK_IMPORTED_MODULE_3__["default"]);
+Nova.booting(function (app, store) {
+  app.component('form-send-mail', _components_send_FormField__WEBPACK_IMPORTED_MODULE_0__["default"]);
+  app.component('index-events', _components_events_IndexField__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  app.component('detail-events', _components_events_DetailField__WEBPACK_IMPORTED_MODULE_2__["default"]);
+  app.component('form-events', _components_events_FormField__WEBPACK_IMPORTED_MODULE_3__["default"]);
 });
 
 /***/ }),
