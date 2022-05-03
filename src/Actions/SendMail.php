@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Nova\Actions;
+namespace KirschbaumDevelopment\NovaMail\Actions;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
