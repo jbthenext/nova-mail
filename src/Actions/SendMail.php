@@ -30,19 +30,18 @@ class SendMail extends Action
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        $mailOptions = json_decode($fields['mail'], true);
-        $novaMailTemplateOption = data_get($mailOptions, 'selectedTemplate.id');
-        $novaMailTemplate = $novaMailTemplateOption ? NovaMailTemplate::find($novaMailTemplateOption) : null;
+        //$novaMailTemplate = $novaMailTemplateOption ? NovaMailTemplate::find($novaMailTemplateOption) : null;
+        $novaMailTemplate = null;
 
-        $models->each(function ($model) use ($mailOptions, $novaMailTemplate) {
+        $models->each(function ($model) use ($fields, $novaMailTemplate) {
             $mailable = new Send(
                 $model,
                 $novaMailTemplate,
-                $mailOptions['body'],
+                $fields['body'],
                 $model->{$model->getEmailField()},
-                $mailOptions['subject'],
+                $fields['subject'],
                 null,
-                $mailOptions['send_delay_in_minutes']
+                $fields['send_delay_in_minutes']
             );
             $mailable->deliver();
         });
@@ -58,7 +57,7 @@ class SendMail extends Action
     {
         return [
             Text::make('Subject')->rules('required'),
-            Number::make('Send Delay')->min(0)->max(120)->step(1)->rules('required')->placeholder('Send Delay (in minutes)'),
+            Number::make('Send Delay (in minutes)')->min(0)->max(120)->step(1),
             Textarea::make('Body')->rules('required')
         ];
     }
