@@ -26,38 +26,6 @@
               v-text="template.name"
             ></option>
           </select>
-
-          <input
-            name="subject"
-            id="subject"
-            dusk="subject"
-            type="text"
-            v-model="subject"
-            placeholder="Subject"
-            class="w-full form-control form-input form-input-bordered"
-          />
-
-          <input
-              name="send-delay-in-minutes"
-              id="send-delay-in-minutes"
-              dusk="send-delay-in-minutes"
-              type="number"
-              v-model="delayInMinutes"
-              placeholder="Send Delay (in minutes)"
-              class="w-full form-control form-input form-input-bordered mt-4"
-          />
-
-          <textarea
-            name="template_override"
-            id="template-override"
-            dusk="template-override"
-            rows="10"
-            v-model="body"
-            placeholder="Body"
-            class="w-full form-control form-input form-input-bordered py-3 h-auto mt-4"
-          ></textarea>
-
-          <input type="text" name="test" v-model="test" id="test" />
         </div>
       </div>
     </div>

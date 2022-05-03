@@ -56,6 +56,7 @@ class SendMail extends Action
     public function fields(NovaRequest $request)
     {
         return [
+            SendMailField::make('Mail'),
             Text::make('Subject')->rules('required'),
             Number::make('Send Delay (in minutes)')->min(0)->max(120)->step(1),
             Textarea::make('Body')->rules('required')
