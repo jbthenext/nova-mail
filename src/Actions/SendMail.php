@@ -14,7 +14,7 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\ActionFields;
 use Illuminate\Queue\SerializesModels;
 
-class EmailAccountProfile extends Action
+class SendMail extends Action
 {
     use InteractsWithQueue, Queueable, SerializesModels;
 
