@@ -13,6 +13,7 @@ use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Fields\ActionFields;
 use Illuminate\Queue\SerializesModels;
+use Laravel\Nova\Fields\Text;
 
 class SendMail extends Action
 {
@@ -54,6 +55,7 @@ class SendMail extends Action
     public function fields(NovaRequest $request)
     {
         return [
+            Text::make('Subject'),
             SendMailField::make('Mail'),
         ];
     }
