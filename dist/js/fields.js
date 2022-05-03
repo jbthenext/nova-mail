@@ -17485,16 +17485,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mixins: [laravel_nova__WEBPACK_IMPORTED_MODULE_0__.FormField, laravel_nova__WEBPACK_IMPORTED_MODULE_0__.HandlesValidationErrors, _mixins_InteractsWithTemplates__WEBPACK_IMPORTED_MODULE_2__["default"]],
-  setup: function setup() {
-    var selectedTemplate = ref(null);
-    var body = ref(null);
-    var subject = ref(null);
-    var delayInMinutes = ref(null);
+  data: function data() {
     return {
-      selectedTemplate: selectedTemplate,
-      body: body,
-      subject: subject,
-      delayInMinutes: delayInMinutes
+      selectedTemplate: '',
+      body: '',
+      subject: '',
+      delayInMinutes: null,
+      test: ''
     };
   },
   methods: {
@@ -17937,7 +17934,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "mail-template-select",
     dusk: "mail-template-select",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return $setup.selectedTemplate = $event;
+      return $data.selectedTemplate = $event;
     }),
     "class": "form-control form-select mb-4"
   }, [_hoisted_5, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(_ctx.templates, function (template, index) {
@@ -17952,43 +17949,52 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* KEYED_FRAGMENT */
   ))], 512
   /* NEED_PATCH */
-  )), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.selectedTemplate]]) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  )), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.selectedTemplate]]) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     name: "subject",
     id: "subject",
     dusk: "subject",
     type: "text",
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-      return $setup.subject = $event;
+      return $data.subject = $event;
     }),
     placeholder: "Subject",
     "class": "w-full form-control form-input form-input-bordered"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.subject]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.subject]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     name: "send-delay-in-minutes",
     id: "send-delay-in-minutes",
     dusk: "send-delay-in-minutes",
     type: "number",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-      return $setup.delayInMinutes = $event;
+      return $data.delayInMinutes = $event;
     }),
     placeholder: "Send Delay (in minutes)",
     "class": "w-full form-control form-input form-input-bordered mt-4"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.delayInMinutes]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.delayInMinutes]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     name: "template_override",
     id: "template-override",
     dusk: "template-override",
     rows: "10",
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
-      return $setup.body = $event;
+      return $data.body = $event;
     }),
     placeholder: "Body",
     "class": "w-full form-control form-input form-input-bordered py-3 h-auto mt-4"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.body]])])])])]);
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.body]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    name: "test",
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+      return $data.test = $event;
+    }),
+    id: "test"
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.test]])])])])]);
 }
 
 /***/ }),

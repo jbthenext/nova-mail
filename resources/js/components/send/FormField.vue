@@ -56,6 +56,8 @@
             placeholder="Body"
             class="w-full form-control form-input form-input-bordered py-3 h-auto mt-4"
           ></textarea>
+
+          <input type="text" name="test" v-model="test" id="test" />
         </div>
       </div>
     </div>
@@ -70,13 +72,14 @@ import InteractsWithTemplates from '../../mixins/InteractsWithTemplates';
 export default {
   mixins: [FormField, HandlesValidationErrors, InteractsWithTemplates],
 
-  setup() {
-    const selectedTemplate = ref(null);
-    const body = ref(null);
-    const subject = ref(null);
-    const delayInMinutes = ref(null);
-
-    return { selectedTemplate, body, subject, delayInMinutes };
+  data() {
+    return {
+      selectedTemplate: '',
+      body: '',
+      subject: '',
+      delayInMinutes: null,
+      test: ''
+    }
   },
 
   methods: {
